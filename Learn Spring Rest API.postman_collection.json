@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "897121bb-be89-41b3-a486-74dc81d2d02b",
+		"name": "Learn Spring Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3614758"
+	},
+	"item": [
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "Create Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"John\",\r\n    \"lastName\" : \"Doe\",\r\n    \"email\" : \"johndoe@gmail.com\",\r\n    \"phone\" : \"08123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/contacts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Contact",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/contacts",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "John",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "johndoe@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "08123456789",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Contact",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/contacts/ba29f7ef-414b-413d-a53b-3e2302e85d4c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"ba29f7ef-414b-413d-a53b-3e2302e85d4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Budi\",\r\n    \"lastName\" : \"Doe\",\r\n    \"email\" : \"budidoe@gmail.com\",\r\n    \"phone\" : \"081234567890\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/contacts/ba29f7ef-414b-413d-a53b-3e2302e85d4c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"ba29f7ef-414b-413d-a53b-3e2302e85d4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/contacts/ba29f7ef-414b-413d-a53b-3e2302e85d4c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"ba29f7ef-414b-413d-a53b-3e2302e85d4c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"jodie\",\r\n    \"password\" : \"password\",\r\n    \"name\" : \"Sanchia Jodie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"jodie\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/auth/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/current",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-TOKEN",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"password\" : \"password\",\r\n    \"name\" : \"Sanchia Jodie Mantra\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/current",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Create Address",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "8e31145a-16eb-4713-a587-90fa9588d351",
+			"type": "string"
+		},
+		{
+			"key": "URL",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
